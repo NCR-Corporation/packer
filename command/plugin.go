@@ -51,6 +51,7 @@ import (
 	shelllocalpostprocessor "github.com/mitchellh/packer/post-processor/shell-local"
 	vagrantpostprocessor "github.com/mitchellh/packer/post-processor/vagrant"
 	vagrantcloudpostprocessor "github.com/mitchellh/packer/post-processor/vagrant-cloud"
+	vcairpostprocessor "github.com/mitchellh/packer/post-processor/vcair"
 	vspherepostprocessor "github.com/mitchellh/packer/post-processor/vsphere"
 	ansibleprovisioner "github.com/mitchellh/packer/provisioner/ansible"
 	ansiblelocalprovisioner "github.com/mitchellh/packer/provisioner/ansible-local"
@@ -75,8 +76,8 @@ type PluginCommand struct {
 var Builders = map[string]packer.Builder{
 	"amazon-chroot":       new(amazonchrootbuilder.Builder),
 	"amazon-ebs":          new(amazonebsbuilder.Builder),
-	"amazon-ebsvolume":    new(amazonebsvolumebuilder.Builder),
 	"amazon-ebssurrogate": new(amazonebssurrogatebuilder.Builder),
+	"amazon-ebsvolume":    new(amazonebsvolumebuilder.Builder),
 	"amazon-instance":     new(amazoninstancebuilder.Builder),
 	"azure-arm":           new(azurearmbuilder.Builder),
 	"cloudstack":          new(cloudstackbuilder.Builder),
@@ -131,6 +132,7 @@ var PostProcessors = map[string]packer.PostProcessor{
 	"shell-local":          new(shelllocalpostprocessor.PostProcessor),
 	"vagrant":              new(vagrantpostprocessor.PostProcessor),
 	"vagrant-cloud":        new(vagrantcloudpostprocessor.PostProcessor),
+	"vcair":                new(vcairpostprocessor.PostProcessor),
 	"vsphere":              new(vspherepostprocessor.PostProcessor),
 }
 
